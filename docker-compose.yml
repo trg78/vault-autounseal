@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  vault:
+    image: vault:1.9.3
+    ports:
+      - 8200:8200
+    volumes:
+      - ./volumes/logs:/vault/logs
+      - ./volumes/file:/vault/file
+      - ./volumes/config:/vault/config
+    cap_add:
+      - IPC_LOCK
+    environment:
+      - VAULT_ADDR=http://localhost:8200
+    restart: always
+    entrypoint: vault server -config=/vault/config/vault.json
+  unsealer:
+    image: alpine:3.9.2
+    command: sh -c "apk add curl jq  && chmod +x /root/unseal.sh && /root/unseal.sh"
+    volumes:
+      - ./unseal.sh:/root/unseal.sh
