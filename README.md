@@ -14,7 +14,9 @@ nano volumes/config/vault.json  (Included)
 nano docker-compose.yml (Included)
 
 nano unseal.sh (Included)
-Value KEY=  will be received from GUI (first start)
+
+Value in unseal.sh KEY=  will be received from GUI (first start)
+"keys_base64": ["0ADA..................................="
 
 Finally start - docker-compose up
 ```
