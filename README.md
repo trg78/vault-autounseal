@@ -2,7 +2,7 @@
 How to start and autounseal Vault Hashicorp
 
 First, lets create volumes
-
+```
 mkdir -p ./volumes/config
 mkdir -p ./volumes/logs
 mkdir -p ./volumes/file
@@ -15,5 +15,5 @@ nano docker-compose.yml (Included)
 
 nano unseal.sh (Included)
 Value KEY=  will be received from GUI (first start)
-
+```
 Finally start - docker-compose up
