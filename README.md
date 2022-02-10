@@ -21,7 +21,7 @@ Value in unseal.sh KEY=  will be received from GUI (first start)
 Finally start - docker-compose up
 
 
-Added "disable_mlock" to vault.json dues to - 
+Added "disable_mlock" to vault.json  because of - 
 Error initializing core: Failed to lock memory: cannot allocate memory
 
 This usually means that the mlock syscall is not available.
